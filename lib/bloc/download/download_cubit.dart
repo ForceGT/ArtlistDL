@@ -19,7 +19,7 @@ class DownloadCubit extends Cubit<DownloadState> {
 
   Future<void> download(SongDetailResponse songInfo) async {
     try {
-      var response = await songRepository.getMp3Stream(url: songInfo.mP3FilePath!);
+      var response = await songRepository.getMp3Stream(url: songInfo.sitePlayableFilePath!);
       _total = response.contentLength ?? 0;
       var totalKB = _total ~/ 1024;
       response.stream.listen((value) {

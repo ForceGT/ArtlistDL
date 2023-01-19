@@ -4,6 +4,7 @@ class SongDetailResponse {
   String? albumName; //
   String? artistDisplayName; //
   String? mP3FilePath; //
+  String? sitePlayableFilePath;
   String? duration; //
 
   SongDetailResponse({
@@ -13,6 +14,7 @@ class SongDetailResponse {
     this.mP3FilePath,
     this.albumName,
     this.duration,
+    this.sitePlayableFilePath,
   });
 
   SongDetailResponse.fromJson(Map<String, dynamic> json) {
@@ -22,6 +24,7 @@ class SongDetailResponse {
     mP3FilePath = json['MP3FilePath'];
     albumName = json['albumName'];
     duration = json['duration'];
+    sitePlayableFilePath = json['sitePlayableFilePath'];
   }
 
   @override
@@ -31,6 +34,8 @@ class SongDetailResponse {
         'artistDisplayName: $artistDisplayName'
         'songName: $songName'
         'albumName: $albumName'
+        'MP3FilePath: $mP3FilePath'
+        'sitePlayableFilePath: $sitePlayableFilePath'
         '}';
   }
 

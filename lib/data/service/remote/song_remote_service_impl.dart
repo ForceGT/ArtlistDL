@@ -24,7 +24,7 @@ class SongRemoteServiceImpl implements SongRemoteService {
   @override
   Future<SongDetailResponse> getSingleSongInfoFromId({required String songId}) async {
     var url = Config.songApiPath.replaceAll("{id}", songId);
-    print('Getting single song info from $url');
+    debugPrint('Getting single song info from $url');
     http.Response response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
