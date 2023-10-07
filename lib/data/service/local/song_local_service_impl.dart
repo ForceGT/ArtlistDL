@@ -18,7 +18,7 @@ class SongLocalServiceImpl implements SongLocalService {
       final fileP = await getDownloadsDirectory();
       Directory("${fileP!.path}/Artlist").createSync();
       final timeStamp = DateTime.now().millisecondsSinceEpoch;
-      File file = File("${fileP.path}/Artlist/${fileName}_$timeStamp.mp3");
+      File file = File("${fileP.path}/Artlist/${fileName}_$timeStamp.aac");
       debugPrint('Saving file to ${file.path}');
       final raf = file.openSync(mode: FileMode.write);
       raf.writeFromSync(song);

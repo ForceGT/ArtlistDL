@@ -34,9 +34,17 @@ class SongCubit extends Cubit<HomeScreenState> {
   List<String> _extractIdFromSearchText(String searchText) {
     var splits = searchText.split("/");
     debugPrint('splits: $splits');
-    var type = splits[3];
-    var id = splits[4];
+    var type = splits
+        .firstWhere((element) => element == "album" || element == "song");
+    var id = splits.firstWhere((element) => int.tryParse(element) != null,
+        orElse: () => "-1");
     debugPrint('type: $type, id: $id');
+    if ( (type != "album" && type != "song") || id == "-1") {
+      throw Exception("No id found in the given url\n"
+          "Did you specify the url in the correct format?\n"
+          "Valid formats:\nhttps://artlist.io/song/88629/cant-breathe\n"
+          "https://artlist.io/album/good-vibes-only/9696");
+    }
 
     if (type == "album") {
       return ["album", id];

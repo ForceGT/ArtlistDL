@@ -30,7 +30,7 @@ class SongRemoteServiceImpl implements SongRemoteService {
       var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
       return SongDetailResponse.fromJson(jsonResponse);
     } else {
-      throw Exception('Failed to get song info');
+      throw Exception('Failed to get song info\n${response.body}');
     }
   }
 
@@ -42,7 +42,7 @@ class SongRemoteServiceImpl implements SongRemoteService {
       return streamedResponse;
     } else {
       debugPrint('Response: ${streamedResponse.statusCode}');
-      throw Exception('Failed to get mp3');
+      throw Exception('Failed to get mp3\n${streamedResponse}');
     }
   }
 }
