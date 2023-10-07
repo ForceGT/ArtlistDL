@@ -35,7 +35,7 @@ class SongCubit extends Cubit<HomeScreenState> {
     var splits = searchText.split("/");
     debugPrint('splits: $splits');
     var type = splits
-        .firstWhere((element) => element == "album" || element == "song");
+        .firstWhere((element) => element == "album" || element == "song", orElse: () => "NotFound");
     var id = splits.firstWhere((element) => int.tryParse(element) != null,
         orElse: () => "-1");
     debugPrint('type: $type, id: $id');
