@@ -18,13 +18,14 @@ class SongDetailResponse {
   });
 
   SongDetailResponse.fromJson(Map<String, dynamic> json) {
-    songId = json['songId'].toString();
-    artistDisplayName = json['artistDisplayName'];
-    songName = json['songName'];
-    mP3FilePath = json['MP3FilePath'];
-    albumName = json['albumName'];
-    duration = json['duration'];
-    sitePlayableFilePath = json['sitePlayableFilePath'];
+    var dataJson = json['data']['songs'][0];
+    songId = dataJson['songId'].toString();
+    artistDisplayName = dataJson['artistDisplayName'];
+    songName = dataJson['songName'];
+    mP3FilePath = dataJson['MP3FilePath'];
+    albumName = dataJson['albumName'];
+    duration = dataJson['duration'];
+    sitePlayableFilePath = dataJson['sitePlayableFilePath'];
   }
 
   @override

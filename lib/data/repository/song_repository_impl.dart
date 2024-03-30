@@ -14,7 +14,8 @@ class SongRepositoryImpl implements SongRepository {
   SongRepositoryImpl({required this.remoteService, required this.localService});
 
   @override
-  Future<List<SongDetailResponse>> getSongInfoFromAlbum({required String albumId}) async {
+  Future<List<SongDetailResponse>> getSongInfoFromAlbum(
+      {required String albumId}) async {
     var albumInfo = await remoteService.getAlbumInfoFromId(albumId: albumId);
     debugPrint("AlbumInfo: $albumInfo");
     if (albumInfo.songs != null) {
@@ -37,7 +38,8 @@ class SongRepositoryImpl implements SongRepository {
   }
 
   @override
-  Future<bool> saveSongToFile({required String fileName, required Uint8List song}) {
+  Future<bool> saveSongToFile(
+      {required String fileName, required Uint8List song}) {
     return localService.saveSongToFile(fileName, song);
   }
 }
