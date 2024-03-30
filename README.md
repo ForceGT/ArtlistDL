@@ -22,10 +22,9 @@ Self help links:
 
 ## Supported Features and extra information
 
-
-- Download playlists(albums) and/or single song via their direct links
-  - Example of supported song link: https://artlist.io/royalty-free-music/song/88629/cant-breathe
-  - Example of playlist of a specific album : https://artlist.io/royalty-free-music/album/good-vibes-only/9696 (Downloads all the songs in this album)
+- Download a single song and/or album via its direct link
+  - Example of supported song link: [From Dream to Reality](https://artlist.io/royalty-free-music/song/from-dream-to-reality/130067)
+  - ~~Albums is not supported since 1.2 since the backend is driven by Server Driven UI~~
 
 - To search a song, Go to https://www.artlist.io, find your song, copy the link in the text field in the browser and paste it in the app. Then press enter so that the app can load the details for you 
 
